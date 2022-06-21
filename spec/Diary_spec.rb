@@ -17,9 +17,9 @@ RSpec.describe Diary do
       expect( diary.reading_time(200) ).to eq 0
     end
 
-    it "returns an error when searching for best entry" do
+    it "returns nil when searching for best entry" do
       diary = Diary.new
-      expect{ diary.find_best_entry_for_reading_time(200, 1) }.to raise_error "No entries found."
+      expect( diary.find_best_entry_for_reading_time(200, 1) ).to eq nil
     end
   end
 
